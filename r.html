@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="scroll-container">
+        <div id="scroll-text">Happy <span  style="color: pink;">Birthday</span> Aregbesola <span style="color: pink;"> Gift </span> </div>
+    </div>
+    <div id="view" style="width:350px; height:100px; margin:80px auto 0 auto;">
+        <div id="box">
+            <div class="one"><img src="./g7.jpg" width="200px" height="200px"></div>
+            <div class="two"><img src="./g8.jpg" width="200px" height="200px"></div>
+            <div class="three"><img src="./g5.jpg" width="200px" height="200px"></div>
+            <div class="four"><img src="./g6.jpg" width="200px" height="200px"></div>
+            <div class="five"><img src="./g1.jpg" width="200px" height="200px"></div>
+            <div class="six"><img src="./g2.jpg" width="200px" height="200px"></div>
+        </div>
+    </div>
+    <style type="text/css">
+        body {
+            background: url(./images.png) center;
+            background-size: 150px auto;
+        }
+
+        #box {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-top: -100px;
+            margin-left: -100px;
+            transform: translate(-50%, -50%);
+        }
+
+        #box div {
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            border: 1px solid lightgrey;
+            background: rgba(255, 200, 100, 0.8);
+            text-align: center;
+            font-size: 200px;
+        }
+
+        #box {
+            -webkit-animation-name: animation;
+            -webkit-animation-timing-function: ease-in-out;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-duration: 20s;
+            margin: 80;
+            -webkit-transform-style: preserve-3d;
+            -webkit-transform-origin: 100px 100px 0;
+        }
+
+        #box .one {
+            -webkit-transform: translateZ(100px);
+        }
+
+        #box .two {
+            -webkit-transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        #box .three {
+            -webkit-transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+        }
+
+        #box .four {
+            -webkit-transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
+        }
+
+        #box .five {
+            -webkit-transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+        }
+
+        #box .six {
+            -webkit-transform: rotateY(90deg) translateZ(100px);
+        }
+
+        @-webkit-keyframes animation {
+
+            from,
+            to {}
+
+            16% {
+                -webkit-transform: rotateY(-90deg);
+            }
+
+            33% {
+                -webkit-transform: rotateY(-90deg) rotateZ(135deg);
+            }
+
+            50% {
+                -webkit-transform: rotateY(225deg) rotateZ(135deg);
+            }
+
+            66% {
+                -webkit-transform: rotateY(135deg) rotateX(135deg);
+            }
+
+            83% {
+                -webkit-transform: rotateX(135deg);
+            }
+        }
+
+        #scroll-container {
+            border: 0.001px;
+            border-radius: 500px;
+            overflow: hidden;
+        }
+
+        #scroll-text {
+            text-align: right;
+            text-shadow: 10px palegreen;
+            font-family: fantasy;
+            color: blue;
+            font-size: 1.5em;
+            font-weight: 900;
+            /* animation properties */
+            -moz-transform: translateX(-100%);
+            -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+
+            -moz-animation: my-animation 15s linear infinite;
+            -webkit-animation: my-animation 15s linear infinite;
+            animation: my-animation 15s linear infinite;
+        }
+
+        /* for Firefox */
+        @-moz-keyframes my-animation {
+            from {
+                -moz-transform: translateX(-100%);
+            }
+
+            to {
+                -moz-transform: translateX(100%);
+            }
+        }
+
+        /* for Chrome */
+        @-webkit-keyframes my-animation {
+            from {
+                -webkit-transform: translateX(-100%);
+            }
+
+            to {
+                -webkit-transform: translateX(100%);
+            }
+        }
+
+        @keyframes my-animation {
+            from {
+                -moz-transform: translateX(-100%);
+                -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
+            }
+
+            to {
+                -moz-transform: translateX(100%);
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+            }
+        }
+    </style>
+</body>
+
+</html>
